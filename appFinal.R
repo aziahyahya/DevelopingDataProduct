@@ -9,9 +9,9 @@ ui<-fluidPage(
   
   sidebarLayout(
     sidebarPanel(
-      p("Select year by clicking on the 'Select Year' and 'Select Month' drop down buttons below to view the API readings"),
-      selectInput(inputId ="year", label="Select Year", choices=c(2013,2014,2015), selected=2014),
-      selectInput(inputId="month", label="Select Month", choices=c(1,2,3,4,5,6,7,8,9,10,11,12), selected=1)
+      p("Select year by clicking on the 'Select Year' and 'Select Month' slider below to view the API readings"),
+      radioButtons(inputId ="year", label="Select Year", choices=c(2013,2014,2015), selected=2014),
+      sliderInput(inputId="month", label="Select Month", 1,12, 1, step = NULL, round = FALSE, format = NULL, locale = NULL, ticks = TRUE, animate = FALSE, width = NULL, sep = ",", pre = NULL, post = NULL, timeFormat = NULL, timezone = NULL, dragRange = TRUE)
     ),
     mainPanel(
       h3("Air Pollution Index (API) for Banting"),
